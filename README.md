@@ -1,4 +1,4 @@
-#Project Submission
+# Project Submission
 
 Navigate to the project repository on GitHub and have a look at the Readme file for detailed instructions on how to get setup with Python and OpenCV and how to access the Jupyter Notebook containing the project code. You will need to download, or git clone, this repository in order to complete the project.
 
