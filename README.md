@@ -1,24 +1,30 @@
-# Introduction
-The objective of this project is to write a code that helps to identify lane lines on the road. First lane detection will be made from different images of raods and next the code will be applied in a vedeo stream which is a sereis of images to detect lane lines. 
-The pipeline or series of steps to acheive the above objective are list below
+#Project Submission
 
-1. Convert the image into grayscale
-2. Perfoming Gaussian blurring (smoothening) on the grayscale image
-3. Canny edge detection on the blurred  image
-4. Define region of interest and mask out portion of the image
-6. Apply Hough transform
-7. Draw line on the original image
-8. 
+Navigate to the project repository on GitHub and have a look at the Readme file for detailed instructions on how to get setup with Python and OpenCV and how to access the Jupyter Notebook containing the project code. You will need to download, or git clone, this repository in order to complete the project.
 
+In this project, you will be writing code to identify lane lines on the road, first in an image, and later in a video stream (really just a series of images). To complete this project you will use the tools you learned about in the lesson, and build upon them.
 
+Your first goal is to write code including a series of steps (pipeline) that identify and draw the lane lines on a few test images. Once you can successfully identify the lines in an image, you can cut and paste your code into the block provided to run on a video stream.
 
+You will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines.
 
-# Reflection
+Finally, you'll make a brief writeup report. The github repository has a writeup_template.md that can be used as a guide.
 
-The open souce computer vision software (OpenCV) was mostly used to  impliment the above pipeline. The first step in the lane detection pipeline is to convert the color image with dimension of WxH*3 (where W is width and H is hight and 3 the color(RGB) or depth) into grayscale image of dimension W*H*1. This process helps us to identify edges based of difference in brightness of neighboring pixels(i.e by computing the gradient , (df/dx,df/dy) ). 
+Have a look at the video clip called "P1_example.mp4" in the repository to see an example of what your final output should look like. Two videos are provided for you to run your code on. These are called "solidWhiteRight.mp4" and solidYellowLeft.mp4".
 
-We donot need to do the gradient calculation by ourselves, the OpenCV library called Canny() can help us to identify edges on the gray image. But before performing the canny edge detection we need to smooth the gray image using the OpenCV library (Gaussian_blur()), the function can take n*n pixel and then average the pixel values which gives us blurred gray image, in the process the places with a strong gradient standsout whihc make the edge detection simple. After canny edge detection is performed masking out the undesired area was done by specifies verties on the image. 
+#Evaluation
+Once you have completed your project, use the Project Rubric to review the project. If you have covered all of the points in the rubric, then you are ready to submit! If you see room for improvement in any category in which you do not meet specifications, keep working!
 
-The last steps are most important in detection lanes. The Hough transform takes in the edge detected image above and converts them into many line segement which instread are composed of points. By manupualting the parameter of Hough transform we can identify line /lanes of our interest. However the Hough transform alone couldn't help us to detect the left line and right line of a lane. To do that we need a help function which takes all the lines detected by the Hough transform and identify the righ and left line of a lane by based on thier slope and finally extrapolate the line. This step in the pipeline is the most time consume and import step in the lane detection process.
+Your project will be evaluated by a Udacity reviewer according to the same Project Rubric. Your project must "meet specifications" in each category in order for your submission to pass.
+
+# Submission
+What to include in your submission
+You may submit your project as a zip file or with a link to a github repo. The submission must include two files:
+
+Jupyter Notebook with your project code
+writeup report (md or pdf file)
+Ready to submit your project?
+Click on the "Submit Project" button and follow the instructions to submit!
+You have not submitted the project yetSUBMIT PROJECT
 
 
